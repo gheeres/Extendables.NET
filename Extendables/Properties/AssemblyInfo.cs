@@ -6,13 +6,14 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Extendables")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A set of useful extension methods for the .NET language runtime.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("n/a")]
 [assembly: AssemblyProduct("Extendables")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © 2014, George Heeres (gheeres@gmail.com)")]
+[assembly: AssemblyTrademark("Licensed under MIT")]
 [assembly: AssemblyCulture("")]
+
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

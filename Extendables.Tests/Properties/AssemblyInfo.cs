@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Extendables.Tests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("NUnit testing suite for the Extendables library.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("n/a")]
 [assembly: AssemblyProduct("Extendables.Tests")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © 2014, George Heeres (gheeres@gmail.com)")]
+[assembly: AssemblyTrademark("Licensed under MIT")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
