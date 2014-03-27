@@ -52,12 +52,13 @@
     <Compile Include="System\ByteExtensionsTests.cs" />
     <Compile Include="System\Drawing\ImageExtensionsTests.cs" />
     <Compile Include="System\Drawing\Imaging\PixelFormatExtensionsTests.cs" />
+    <Compile Include="System\Drawing\PointExtensionTests.cs" />
     <Compile Include="System\Int64ExtensionsTests.cs" />
     <Compile Include="System\Int32ExtensionsTests.cs" />
     <Compile Include="System\Int16ExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Projects\NET\CPS-SVN\Extendables\Extendables.csproj">
+    <ProjectReference Include="..\Extendables\Extendables.csproj">
       <Project>{73D5F600-37FB-4273-9230-96C52A8A8077}</Project>
       <Name>Extendables</Name>
     </ProjectReference>
