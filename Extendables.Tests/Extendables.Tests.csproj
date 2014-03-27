@@ -41,6 +41,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -57,6 +58,7 @@
     <Compile Include="System\Int64ExtensionsTests.cs" />
     <Compile Include="System\Int32ExtensionsTests.cs" />
     <Compile Include="System\Int16ExtensionsTests.cs" />
+    <Compile Include="System\Windows\Forms\ControlExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Extendables\Extendables.csproj">
