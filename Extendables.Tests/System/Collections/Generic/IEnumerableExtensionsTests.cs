@@ -14,7 +14,7 @@ namespace Extendables.Tests.System.Collections.Generic
     {
       IEnumerable<int> items = null;
       items.ForEach((i) => {
-        Assert.Fail("Items were executed on an empty ForEach loop when they should not have.");
+        Assert.Fail("Items were executed on an null ForEach enumeration when they should not have.");
       });
       Assert.Pass();
     }
@@ -24,7 +24,7 @@ namespace Extendables.Tests.System.Collections.Generic
     {
       IEnumerable<int> items = new int[0];
       items.ForEach((i) => {
-        Assert.Fail("Items were executed on an empty ForEach loop when they should not have.");
+        Assert.Fail("Items were executed on an empty ForEach enumeration when they should not have.");
       });
       Assert.Pass();
     }
