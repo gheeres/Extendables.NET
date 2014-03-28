@@ -123,5 +123,46 @@ namespace Extendables.Tests.System.Drawing
         
       Assert.AreEqual(expected, result);
     }
+
+    [Test]
+    public void ToArrayWithNullImageReturnsNullArray()
+    {
+      Image image = null;
+      Assert.IsNull(image.ToArray());
+    }
+
+    [Test]
+    public void ToArrayReturnByteArray()
+    {
+      using (Image image = GetSampleImage(Color.White)) {
+        Assert.Greater(image.ToArray().Length, 0);
+      }
+    }
+
+    [Test]
+    public void ToArrayWithEmptyImageFormatDefaultsToPng()
+    {
+      ImageFormat expected = ImageFormat.Png;
+      using (Image image = GetSampleImage(Color.White)) {
+        byte[] result = image.ToArray();
+        using (MemoryStream stream = new MemoryStream(result)) {
+          Bitmap bmp = new Bitmap(stream);
+          Assert.AreEqual(expected, bmp.RawFormat);
+        };
+      }
+    }
+
+    [Test]
+    public void ToArrayWithImageFormatGifReturnsGif()
+    {
+      ImageFormat expected = ImageFormat.Gif;
+      using (Image image = GetSampleImage(Color.White)) {
+        byte[] result = image.ToArray(expected);
+        using (MemoryStream stream = new MemoryStream(result)) {
+          Bitmap bmp = new Bitmap(stream);
+          Assert.AreEqual(expected, bmp.RawFormat);
+        };
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -160,6 +161,32 @@ namespace System.Drawing.Imaging
     private static bool IsWhitespace(Color pixel, IEnumerable<Color> colors = null)
     {
       return ((colors ?? DefaultWhitespaceColors).Any(c => c.ToArgb() == pixel.ToArgb()));
+    }
+
+    /// <summary>
+    /// Returns the byte[] representation of the image.
+    /// </summary>
+    /// <param name="image">The image to get the byte representation for.</param>
+    /// <returns>The encoded byte[] representation of the image.</returns>
+    public static byte[] ToArray(this Image image)
+    {
+      return(ToArray(image, ImageFormat.Png));
+    }
+    
+    /// <summary>
+    /// Returns the byte[] representation of the image.
+    /// </summary>
+    /// <param name="image">The image to get the byte representation for.</param>
+    /// <param name="format">The format to encode or save the image in.</param>
+    /// <returns>True if the color is within the specified whitespace.</returns>
+    public static byte[] ToArray(this Image image, ImageFormat format)
+    {
+      if (image == null) return (null);
+
+      using (MemoryStream stream = new MemoryStream()) {
+        image.Save(stream, format);
+        return (stream.ToArray());
+      }
     }
   }
 }
