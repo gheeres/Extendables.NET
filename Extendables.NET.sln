@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extendables", "Extendables\Extendables.csproj", "{73D5F600-37FB-4273-9230-96C52A8A8077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extendables.Tests", "Extendables.Tests\Extendables.Tests.csproj", "{7F4CA251-3B9A-4489-A413-183FF6D35D44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73D5F600-37FB-4273-9230-96C52A8A8077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D5F600-37FB-4273-9230-96C52A8A8077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D5F600-37FB-4273-9230-96C52A8A8077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D5F600-37FB-4273-9230-96C52A8A8077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F4CA251-3B9A-4489-A413-183FF6D35D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F4CA251-3B9A-4489-A413-183FF6D35D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F4CA251-3B9A-4489-A413-183FF6D35D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F4CA251-3B9A-4489-A413-183FF6D35D44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
