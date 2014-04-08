@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Extendables.NET</id>
+    <version>0.1.0.0</version>
+    <title>Useful Extension Methods for .NET</title>
+    <authors>George Heeres</authors>
+    <licenseUrl>https://github.com/gheeres/Extendables.NET/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/gheeres/Extendables.NET</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A set of useful extension methods for the .NET language runtime.</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>extension image crop</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\Extendables.dll" target="lib\net40" />
+  </files>
+</package>
