@@ -34,37 +34,24 @@ namespace System.Drawing.Imaging
         PixelFormat dataFormat = PixelFormat.Format32bppArgb;
         int offset = dataFormat.GetBytesPerPixel();
 
+        object mutex = new object();
         data = bitmap.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadOnly, dataFormat);
-        Parallel.Invoke(
-          // Start scanning (left to right, top to bottom)
-          () => {
-            byte[] row = new byte[data.Stride];
-            for (int y = 0; y < height; y++) {
-              Marshal.Copy(data.Scan0 + y * data.Stride, row, 0, data.Stride);
-              for (int x = 0; x < width; x++) {
-                Color pixel = Color.FromArgb(row[(x * offset) + 3], row[(x * offset) + 2], row[(x * offset) + 1], row[(x * offset)]);
-                if (!IsWhitespace(pixel, colors ?? DefaultWhitespaceColors)) {
-                  if (x1 == null) x1 = x;
-                  else x2 = x;
-                }
-              }
-            }
-          },
-          // Start scanning (right to left, bottom to top)
-          () => {
-            byte[] row = new byte[data.Stride];
-            for (int y = height - 1; y >= 0; y--) {
-              Marshal.Copy(data.Scan0 + y * data.Stride, row, 0, data.Stride);
-              for (int x = width - 1; x >= 0; x--) {
-                Color pixel = Color.FromArgb(row[(x * offset) + 3], row[(x * offset) + 2], row[(x * offset) + 1], row[(x * offset)]);
-                if (!IsWhitespace(pixel, colors ?? DefaultWhitespaceColors)) {
-                  if (y2 == null) y2 = y;
-                  else y1 = y;
-                }
-              }
-            }
-          }
-        );
+        Parallel.For(0, height - 1, (y) => {
+          byte[] row = new byte[data.Stride];
+           Marshal.Copy(data.Scan0 + y * data.Stride, row, 0, data.Stride);
+           for (int x = 0; x < width; x++) {
+             Color pixel = Color.FromArgb(row[(x * offset) + 3], row[(x * offset) + 2], row[(x * offset) + 1], row[(x * offset)]);
+             if (!IsWhitespace(pixel, colors ?? DefaultWhitespaceColors)) {
+               lock(mutex) {
+                 if ((x1 == null) || (x < x1)) x1 = x;
+                 else if ((x2 == null) || (x > x2)) x2 = x;
+  
+                 if ((y1 == null) || (y < y1)) y1 = y;
+                 else if ((y2 == null) || (y > y2)) y2 = y;
+               }
+             }
+           }
+        });
       }
       finally {
         bitmap.UnlockBits(data);
