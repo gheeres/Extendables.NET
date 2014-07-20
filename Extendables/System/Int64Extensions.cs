@@ -10,7 +10,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsOdd(this long number)
     {
-      return (! IsDivisibleBy(number, 2));
+      return (number & 1) != 0;
     }
 
     /// <summary>
@@ -20,7 +20,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsEven(this long number)
     {
-      return (IsDivisibleBy(number, 2));
+      return (number & 1) == 0;
     }
 
     /// <summary>
