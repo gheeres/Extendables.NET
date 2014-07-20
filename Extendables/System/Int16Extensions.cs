@@ -10,7 +10,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsOdd(this short number)
     {
-      return (number & 1) == 1;
+      return (number & 1) != 0;
     }
 
     /// <summary>
