@@ -10,7 +10,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsOdd(this byte number)
     {
-      return (number & 0x01) == 1;
+      return (number & 1) != 0;
     }
 
     /// <summary>
@@ -20,7 +20,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsEven(this byte number)
     {
-      return (number & 0x01) == 0;
+      return (number & 1) == 0;
     }
 
     /// <summary>
