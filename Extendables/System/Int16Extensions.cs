@@ -10,7 +10,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsOdd(this short number)
     {
-      return (! IsDivisibleBy(number, 2));
+      return (number & 1) == 1;
     }
 
     /// <summary>
@@ -20,7 +20,7 @@ namespace System
     /// <returns>True if the number is odd, false if otherwise.</returns>
     public static bool IsEven(this short number)
     {
-      return (IsDivisibleBy(number, 2));
+      return (number & 1) == 0;
     }
 
     /// <summary>
